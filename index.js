@@ -1,4 +1,4 @@
-/*console.log("Hello people");
+/*console.log("Hello people");// Note : Just the upper part is a server using Node js
 
 //create a http server
 const http = require('http')
@@ -20,32 +20,50 @@ console.log(__dirname);
 //view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use('/', express.static(path.join(__dirname, 'public')))
+app.use("/", express.static(path.join(__dirname, "public")));
 
-//routes
+//router
 app.get("/about", (req, res) => {
   res.render("about");
 });
+// this is the login router
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+//this is the register router
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+
 //index router
 app.get("/", (req, res) => {
-  res.render("index")
+  res.render("index");
 });
 // this is contact router
-app.get("/contact", (req, res)=> {
-    res.render("contact")
+app.get("/contact", (req, res) => {
+  res.render("contact");
 });
 //this the home router
-app.get('/home', (req, res)=> {
-    res.render("home")
-})
-
+app.get("/home", (req, res) => {
+  res.render("home");
+});
 // home
 app.get("/home/:id", (req, res) => {
   const id = req.params.id;
   console.log(req.params);
   res.send(`this is me, home ${id}`);
 });
-
+app.get("/login/:id", (req, res) => {
+  const id = req.params.id;
+  console.log(req.params);
+  res.send(`this is me, login ${id}`);
+});
+app.get("/register/:id", (req, res) => {
+  const id = req.params.id;
+  console.log(req.params);
+  res.send(`this is me, login ${id}`);
+});
 // al
 app.get("/al", (req, res) => {
   res.send("And this is Al, OK ?");
