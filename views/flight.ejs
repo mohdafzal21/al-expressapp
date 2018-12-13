@@ -1,0 +1,18 @@
+<%include ./partials/header %>
+
+<h1>Add new Flights</h1>
+<form action='/flight/' method="POST" id="addFlight">
+    <input name="name" placeholder="enter your flight name">
+    <input name="price" placeholder="enter the fare price">
+    <button>Submit</button>
+</form>
+
+<hr>
+
+
+<div class="content"></div>
+
+<script src="/javascripts/flight.js"></script>
+<!-- <script src="/javascripts/flight.js"></script> -->
+
+<%include ./partials/footer %>
